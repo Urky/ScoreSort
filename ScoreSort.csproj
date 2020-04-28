@@ -34,8 +34,12 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.0.0.10\lib\net472\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -248,15 +252,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="SubModule.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-      mkdir "$(TargetDir)bin\Win64_Shipping_Client\"
-      move "$(TargetDir)$(ProjectName).*" "$(TargetDir)bin\Win64_Shipping_Client\"
-  </PostBuildEvent>
+    <PostBuildEvent>mkdir "$(TargetDir)bin\Win64_Shipping_Client\"
+            move "$(TargetDir)$(ProjectName).*" "$(TargetDir)bin\Win64_Shipping_Client\"
+            move "$(TargetDir)0Harmony.*" "$(TargetDir)bin\Win64_Shipping_Client\"
+</PostBuildEvent>
   </PropertyGroup>
 </Project>

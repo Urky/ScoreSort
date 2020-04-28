@@ -17,7 +17,7 @@
     <SubModule>
       <Name value="ScoreSort" />
       <DLLName value="ScoreSort.dll" />
-      <SubModuleClassType value="ScoreSortSubModule" />
+      <SubModuleClassType value="ScoreSort.ScoreSortSubModule" />
       <Tags>
         <Tag key="DedicatedServerType" value="none" />
         <Tag key="IsNoRenderModeElement" value="false" />
